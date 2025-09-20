@@ -7,6 +7,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// React App Route
+Route::get('/react-app', function () {
+    return view('react-app');
+})->name('react.app');
+
+// API Documentation Route
+Route::get('/api-docs', function () {
+    return view('api-docs');
+})->name('api.docs');
+
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
